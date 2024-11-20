@@ -1,15 +1,21 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/node"
-      }
-    ],
-    "framework": "remix",
-    "outputDirectory": "dist",
-    "routes": [
-      { "handle": "dist/client/assets" },
-      { "src": "/(.*)", "dest": "dist/server/index.js" }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "framework": "remix",
+  "outputDirectory": "dist",
+  "routes": [
+    {
+      "src": "/client/assets/(.*)",
+      "dest": "dist/client/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/server/index.js"
+    }
+  ]
+}
