@@ -3,13 +3,61 @@
   --cart-aside-summary-height-with-discount: 300px;
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
-  --header-height: 64px;
+  --header-height: 70px;
   --color-dark: #000;
   --color-light: #fff;
 }
 
-img {
+/* img {
   border-radius: 4px;
+} */
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
 }
 
 /*
@@ -147,15 +195,26 @@ button.reset:hover:not(:has(> *)) {
 * components/Header
 * --------------------------------------------------
 */
+
 .header {
-  align-items: center;
-  background: #fff;
   display: flex;
+  align-items: center; 
+  align-self: center;
+  top: 1rem;
+  background-color: #FFFFFF;
   height: var(--header-height);
-  padding: 0 1rem;
-  position: sticky;
-  top: 0;
+  width: 95%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: absolute;
   z-index: 1;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+}
+
+.header img{
+  width: 30px;
+  height: 30px;
 }
 
 .header-menu-mobile-toggle {
@@ -173,10 +232,10 @@ button.reset:hover:not(:has(> *)) {
 .header-menu-desktop {
   display: none;
   grid-gap: 1rem;
+  align-items: center;
   @media (min-width: 45em) {
     display: flex;
     grid-gap: 1rem;
-    margin-left: 3rem;
   }
 }
 
@@ -188,7 +247,6 @@ button.reset:hover:not(:has(> *)) {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
-  margin-left: auto;
 }
 
 /*
@@ -318,6 +376,37 @@ button.reset:hover:not(:has(> *)) {
   align-items: center;
   gap: 1rem;
 }
+
+/*
+* --------------------------------------------------
+* components/Carousel
+* --------------------------------------------------
+*/
+/* .carousel-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  gap: 16px;
+  width: 200%;
+  height: 100%;
+  animation: slide 20s linear infinite;
+  &:hover {
+      animation-play-state: paused;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+ */
 
 /*
 * --------------------------------------------------
