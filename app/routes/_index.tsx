@@ -2,25 +2,25 @@ import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData, type MetaFunction} from '@remix-run/react';
 import {flattenConnection} from '@shopify/hydrogen';
 import {HeroSection} from '~/components/ui/hero/HeroSection';
-import carouselText from '~/assets/hero/carousel-text';
+import carouselText from 'public/assets/hero/carousel-text';
 import {GoalSection} from '~/components/ui/goals/Goals';
 import {CustomizedProduct} from '~/components/ui/products/CustomizedProduct';
 import {NextGenSection} from '~/components/ui/NextGeneration';
 import {AlternativeContent} from '~/components/ui/ContentSection';
-import goalsInfo from '~/assets/goals/goals-content';
-import supplementMarketing from '~/assets/supplements/clean-supplements';
+import goalsInfo from 'public/assets/goals/goals-content';
+import supplementMarketing from 'public/assets/supplements/clean-supplements';
 import {
   instaImagesInferior,
   instaImagesSuperior,
-} from '~/assets/insta/insta-content';
-import articleContent from '~/assets/articles/article-content';
+} from 'public/assets/insta/insta-content';
+import articleContent from 'public/assets/articles/article-content';
 import type {ProductVariantFragment} from 'storefrontapi.generated';
 import type {MoneyV2} from '@shopify/hydrogen/customer-account-api-types';
 import {AutomaticCarousel} from '~/components/ui/carousel/AutomaticCarousel';
 import {BundlesSection} from '~/components/ui/products/BundlesSection';
 import {SupplementSection} from '~/components/ui/products/SupplementSection';
 import {ResultsSection} from '~/components/ui/results/ResultsSection';
-import resultList from '~/assets/results/results-content';
+import resultList from 'public/assets/results/results-content';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];

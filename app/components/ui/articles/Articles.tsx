@@ -1,4 +1,4 @@
-import type {ArticleType} from '~/assets/articles/article-content';
+import type {ArticleType} from 'public/assets/articles/article-content';
 
 export function LatestArticles({articles}: {articles: ArticleType[]}) {
   return (

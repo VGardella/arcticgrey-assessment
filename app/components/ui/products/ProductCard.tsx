@@ -36,7 +36,7 @@ export function SupplementCard({product}: {product: ProductNode}) {
             <div className="flex">
               {Array.from({length: 5}).map((_, index) => (
                 <div key={index}>
-                  <img className="w-3 h-3" src="/app/assets/black-star.png" />
+                  <img className="w-3 h-3" src="/../assets/black-star.png" />
                 </div>
               ))}
             </div>

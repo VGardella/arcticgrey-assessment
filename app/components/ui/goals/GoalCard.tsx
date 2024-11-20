@@ -1,4 +1,4 @@
-import type {GoalData} from '~/assets/goals/goals-content';
+import type {GoalData} from 'public/assets/goals/goals-content';
 
 export function GoalCard({imgUrl, header, description}: GoalData) {
   return (
@@ -13,7 +13,7 @@ export function GoalCard({imgUrl, header, description}: GoalData) {
         </div>
         <div className="">
           <button className="w-[37px]">
-            <img src="/app/assets/goals/flecha.png" />
+            <img src="/../assets/goals/flecha.png" />
           </button>
         </div>
       </div>

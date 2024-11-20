@@ -30,13 +30,13 @@ export function BundlesSelection({
               <button className="w-10 h-10 bg-[#F5F5F5] border border-[#1B1F231A] rounded cursor-pointer">
                 <img
                   className="h-[10px] m-auto"
-                  src="/app/assets/arrow-l.png"
+                  src="/../assets/arrow-l.png"
                 />
               </button>
               <button className="w-10 h-10 bg-[#F5F5F5] border border-[#1B1F231A] rounded cursor-pointer">
                 <img
                   className="h-[10px] m-auto"
-                  src="/app/assets/arrow-r.png"
+                  src="/../assets/arrow-r.png"
                 />
               </button>
             </div>
@@ -83,7 +83,7 @@ export function BundlesSelection({
                           <div key={index}>
                             <img
                               className="w-3 h-3"
-                              src="/app/assets/black-star.png"
+                              src="/../assets/black-star.png"
                             />
                           </div>
                         ))}

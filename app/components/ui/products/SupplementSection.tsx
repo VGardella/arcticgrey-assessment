@@ -1,7 +1,7 @@
 import type {ProductNode} from '~/routes/_index';
 import {SupplementSelection} from '../../products/SupplementSelection';
 import {SupplementInfo} from './SupplementInfo';
-import type {SupplData} from '~/assets/supplements/clean-supplements';
+import type {SupplData} from 'public/assets/supplements/clean-supplements';
 
 export function SupplementSection({
   suppInfo,

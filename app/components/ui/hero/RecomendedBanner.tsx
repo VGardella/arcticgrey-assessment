@@ -11,7 +11,7 @@ export function RecomendedBanner() {
           <div className="flex">
             {Array.from({length: 5}).map((_, index) => (
               <div key={index} className="w-5 h-5">
-                <img src="/app/assets/golden-star.png" />
+                <img src="/../assets/golden-star.png" />
               </div>
             ))}
           </div>
@@ -20,35 +20,35 @@ export function RecomendedBanner() {
       </div>
       <div className="flex h-10 gap-2 ml-auto mr-16 self-center">
         <img
-          src="/app/assets/hero/rolling-stones.png"
+          src="/../assets/hero/rolling-stones.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/mens-journal.png"
+          src="/../assets/hero/mens-journal.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/la-weekly.png"
+          src="/../assets/hero/la-weekly.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/herb.png"
+          src="/../assets/hero/herb.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/ny-times.png"
+          src="/../assets/hero/ny-times.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/bbc.png"
+          src="/../assets/hero/bbc.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/rolling-stones.png"
+          src="/../assets/hero/rolling-stones.png"
           className="w-auto h-auto object-contain"
         />
         <img
-          src="/app/assets/hero/mens-journal.png"
+          src="/../assets/hero/mens-journal.png"
           className="w-auto h-auto object-contain"
         />
       </div>

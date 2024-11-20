@@ -1,4 +1,4 @@
-import type {ResultsData} from '~/assets/results/results-content';
+import type {ResultsData} from 'public/assets/results/results-content';
 import {ResultCard} from './ResultCard';
 
 export function ResultReel({results}: {results: ResultsData[]}) {

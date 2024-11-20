@@ -1,4 +1,4 @@
-import type {GoalData} from '~/assets/goals/goals-content';
+import type {GoalData} from 'public/assets/goals/goals-content';
 import {GoalCard} from './GoalCard';
 
 export function GoalSection({goalsInfo}: {goalsInfo: GoalData[]}) {

@@ -1,4 +1,4 @@
-import type {InstaImagesType} from '~/assets/insta/insta-content';
+import type {InstaImagesType} from 'public/assets/insta/insta-content';
 
 export function FollowInstagram({
   imgSup,
@@ -16,7 +16,7 @@ export function FollowInstagram({
               <div className="flex gap-4 items-center justify-start">
                 <img
                   className="w-[60px] h-[60px]"
-                  src="/app/assets/insta/insta-logo.png"
+                  src="/../assets/insta/insta-logo.png"
                 />
                 <div className="font-bold text-[20px] leading-6">
                   @uncmfrt.com

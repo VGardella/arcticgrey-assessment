@@ -20,7 +20,7 @@ export function CartBadge({count}: {count: number | null}) {
         } as CartViewPayload);
       }}
     >
-      <img src="/app/assets/header/button-cart.png"></img>
+      <img src="/../assets/header/button-cart.png"></img>
     </a>
   );
 }

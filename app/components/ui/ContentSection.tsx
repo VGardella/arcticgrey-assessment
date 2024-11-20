@@ -1,7 +1,7 @@
 import {LatestArticles} from './articles/Articles';
 import {FollowInstagram} from './FollowInstagram';
-import type {InstaImagesType} from '~/assets/insta/insta-content';
-import type {ArticleType} from '~/assets/articles/article-content';
+import type {InstaImagesType} from 'public/assets/insta/insta-content';
+import type {ArticleType} from 'public/assets/articles/article-content';
 
 export function AlternativeContent({
   imgSup,

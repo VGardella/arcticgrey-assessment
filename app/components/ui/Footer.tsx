@@ -96,19 +96,19 @@ export function Footer() {
             <div className="flex gap-[20px]">
               <img
                 className="h-[20px]"
-                src="/app/assets/icons/insta-icon.png"
+                src="/../assets/icons/insta-icon.png"
               />
               <img
                 className="h-[15px]"
-                src="/app/assets/icons/twitter-icon.png"
+                src="/../assets/icons/twitter-icon.png"
               ></img>
               <img
                 className="h-[18px]"
-                src="/app/assets/icons/facebook-icon.png"
+                src="/../assets/icons/facebook-icon.png"
               ></img>
               <img
                 className="h-[16px]"
-                src="/app/assets/icons/yt-icon.png"
+                src="/../assets/icons/yt-icon.png"
               ></img>
             </div>
           </div>

@@ -10,7 +10,7 @@ export type ArticleType = {
 const articleContent: ArticleType[] = [
   {
     id: 'principal',
-    imgUrl: '/app/assets/articles/principal.jpg',
+    imgUrl: '/../assets/articles/principal.jpg',
     topic: 'Balanced Diet',
     title: 'Foundational Supplements: Build a Better You',
     creator: 'Emily Thompson',
@@ -18,7 +18,7 @@ const articleContent: ArticleType[] = [
   },
   {
     id: 'secondary-1',
-    imgUrl: '/app/assets/articles/secondary1.jpg',
+    imgUrl: '/../assets/articles/secondary1.jpg',
     topic: 'Balanced Diet',
     title:
       'Taming the Fire Within: Everything You Need to Know About Inflammation',
@@ -27,7 +27,7 @@ const articleContent: ArticleType[] = [
   },
   {
     id: 'secondary-1',
-    imgUrl: '/app/assets/articles/secondary2.jpg',
+    imgUrl: '/../assets/articles/secondary2.jpg',
     topic: 'Balanced Diet',
     title: 'Optimize Your Sleep with These 15 Strategies',
     creator: 'Emily Thompson',

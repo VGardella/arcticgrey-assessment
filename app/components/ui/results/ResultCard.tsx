@@ -1,4 +1,4 @@
-import type {ResultsData} from '~/assets/results/results-content';
+import type {ResultsData} from 'public/assets/results/results-content';
 
 export function ResultCard({clientInfo}: {clientInfo: ResultsData}) {
   return (

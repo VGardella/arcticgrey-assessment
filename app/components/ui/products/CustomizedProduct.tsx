@@ -14,13 +14,13 @@ export function CustomizedProduct() {
       <div className="flex w-[1520px] h-[548]">
         <div className="flex items-center justify-between w-full">
           <button className="w-10 h-10 bg-[#F5F5F5] border border-[#1B1F231A] rounded cursor-pointer">
-            <img className="h-[10px] m-auto" src="/app/assets/arrow-l.png" />
+            <img className="h-[10px] m-auto" src="/../assets/arrow-l.png" />
           </button>
           <div className="flex">
             <div className="flex justify-center items-center w-[590px] h-[548px] rounded-l-lg border border-[#0000001A] bg-[#FFFFFF]">
               <img
                 className="w-[356px] h-[356px]"
-                src="/app/assets/supplements/whey protein.png"
+                src="/../assets/supplements/whey-protein.png"
               />
             </div>
             <div className="w-[770px] h-[548px] rounded-l-lg border border-[#0000001A]">
@@ -33,21 +33,21 @@ export function CustomizedProduct() {
                     <div className="flex gap-6 items-center">
                       <img
                         className="w-[50px]"
-                        src="/app/assets/supplements/ingredients-dark.png"
+                        src="/../assets/supplements/ingredients-dark.png"
                       ></img>
                       <h3 className="text-lg leading-[21px]">Whey Based</h3>
                     </div>
                     <div className="flex gap-6 items-center">
                       <img
                         className="w-[50px]"
-                        src="/app/assets/supplements/ingredients-dark.png"
+                        src="/../assets/supplements/ingredients-dark.png"
                       ></img>
                       <h3 className="text-lg leading-[21px]">Build Muscle</h3>
                     </div>
                     <div className="flex gap-6 items-center">
                       <img
                         className="w-[50px]"
-                        src="/app/assets/supplements/ingredients-dark.png"
+                        src="/../assets/supplements/ingredients-dark.png"
                       ></img>
                       <h3 className="text-lg leading-[21px]">
                         Clean Ingredients
@@ -64,7 +64,7 @@ export function CustomizedProduct() {
                   <div className="flex flex-col gap-3 my-6">
                     <img
                       className="w-[45px] h-[45px]"
-                      src="/app/assets/supplements/ingredients-light.png"
+                      src="/../assets/supplements/ingredients-light.png"
                     ></img>
                     <h3 className="leading-[18px] font-medium">
                       Whey Protein Isolate
@@ -77,7 +77,7 @@ export function CustomizedProduct() {
                   <div className="flex flex-col gap-3 my-6">
                     <img
                       className="w-[45px] h-[45px]"
-                      src="/app/assets/supplements/ingredients-light.png"
+                      src="/../assets/supplements/ingredients-light.png"
                     ></img>
                     <h3 className="leading-[18px] font-medium">
                       Whey Protein Isolate
@@ -90,7 +90,7 @@ export function CustomizedProduct() {
                   <div className="flex flex-col gap-3 my-6">
                     <img
                       className="w-[45px] h-[45px]"
-                      src="/app/assets/supplements/ingredients-light.png"
+                      src="/../assets/supplements/ingredients-light.png"
                     ></img>
                     <h3 className="leading-[18px] font-medium">
                       Whey Protein Isolate
@@ -108,7 +108,7 @@ export function CustomizedProduct() {
             </div>
           </div>
           <button className="w-10 h-10 bg-[#F5F5F5] border border-[#1B1F231A] rounded cursor-pointer">
-            <img className="h-[10px] m-auto" src="/app/assets/arrow-r.png" />
+            <img className="h-[10px] m-auto" src="/../assets/arrow-r.png" />
           </button>
         </div>
       </div>

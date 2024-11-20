@@ -11,7 +11,7 @@ import {
   isRouteErrorResponse,
   type ShouldRevalidateFunction,
 } from '@remix-run/react';
-import favicon from '~/assets/supplements/ingredients-light.png';
+import favicon from '/public/assets/supplements/ingredients-light.png';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import tailwindCss from './styles/tailwind.css?url';

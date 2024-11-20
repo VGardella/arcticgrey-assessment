@@ -9,7 +9,7 @@ export function MenButton({onClick}: {onClick?: () => void}) {
       <img
         className="w-5 h-5 ml-2"
         alt="Men"
-        src="/app/assets/header/button-man.png"
+        src="/../assets/header/button-man.png"
       />
     </button>
   );
