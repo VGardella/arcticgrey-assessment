@@ -9,6 +9,7 @@
     "framework": "remix",
     "outputDirectory": "dist",
     "routes": [
-      { "src": "/(.*)", "dest": "dist/index.js" }
+      { "handle": "dist/client/assets" },
+      { "src": "/(.*)", "dest": "dist/server/index.js" }
     ]
   }
