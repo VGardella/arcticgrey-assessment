@@ -1,18 +1,14 @@
-import {filterCollection} from '~/domain/filterCollection';
-import type {ProductNode} from '~/routes/_index';
 import {NavBar} from '../NavBar';
-import {ProductImage} from '../ui/products/ProductImage';
-import {AddToCartButton} from '../cart/AddToCartButton';
 import {TagsProductCard} from '../ui/products/TagsProductCard';
+import { CollectionQuery } from 'storefrontapi.generated';
+import { Suspense } from 'react';
+import { Await } from '@remix-run/react';
 
 export function BundlesSelection({
-  productList,
-  handle,
+  productList
 }: {
-  productList: ProductNode[];
-  handle: string;
+  productList: Promise<CollectionQuery>;
 }) {
-  const bundles = filterCollection({productList, handle}).slice(0, 4);
 
   return (
     <div className="flex justify-center w-full">
@@ -38,9 +34,17 @@ export function BundlesSelection({
           </div>
         </div>
         <div className="flex gap-5">
-          {bundles.map((item) => {
-            return <TagsProductCard key={item.id} product={item} />;
-          })}
+          <Suspense fallback={<div>Loading...</div>}>
+            <Await resolve={productList}>
+              {
+                (resolvedList) => (
+                  resolvedList.collection?.products.nodes.map((item) => {
+                    return <TagsProductCard key={item.id} product={item} />;
+                  })
+                )          
+              }
+            </Await>
+          </Suspense>
         </div>
       </div>
     </div>

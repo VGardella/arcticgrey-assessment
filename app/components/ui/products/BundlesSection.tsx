@@ -1,16 +1,15 @@
-import type {ProductNode} from '~/routes/_index';
 import {BundlesSelection} from '../../products/BundleSelection';
+import type { CollectionQuery } from 'storefrontapi.generated';
 
 export function BundlesSection({
-  productList,
-  handle,
+  productList
 }: {
-  productList: ProductNode[];
-  handle: string;
+  productList: Promise<CollectionQuery>;
 }) {
+
   return (
     <div className="flex flex-col md:items-center">
-      <BundlesSelection productList={productList} handle={handle} />
+      <BundlesSelection productList={productList} />
     </div>
   );
 }
