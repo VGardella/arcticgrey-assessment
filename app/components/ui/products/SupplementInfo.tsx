@@ -12,7 +12,7 @@ export function SupplementInfo({suppInfo}: {suppInfo: SupplData[]}) {
       <div className="flex gap-8 w-min">
         {suppInfo.map((item: SupplData) => {
           return (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6" key={item.id}>
               <img className="w-[50px] h-[50px]" src={item.imgUrl} />
               <div className="flex flex-col gap-4">
                 <h3 className="h-[21px] text-lg font-medium">{item.title}</h3>

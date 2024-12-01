@@ -19,6 +19,7 @@ export function GoalSection({goalsInfo}: {goalsInfo: GoalData[]}) {
         {goalsInfo.map((item: GoalData) => {
           return (
             <GoalCard
+              key={item.id}
               imgUrl={item.imgUrl}
               header={item.header}
               description={item.description}

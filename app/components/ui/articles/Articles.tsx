@@ -28,6 +28,7 @@ export function LatestArticles({articles}: {articles: ArticleType[]}) {
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
+                    key={item.id}
                   >
                     <div className="flex flex-col p-10 gap-8 text-white">
                       <div className="flex flex-col gap-2">
@@ -51,7 +52,7 @@ export function LatestArticles({articles}: {articles: ArticleType[]}) {
               .filter((item: ArticleType) => item.id.includes('secondary'))
               .map((item: ArticleType) => {
                 return (
-                  <div className="flex justify-between">
+                  <div className="flex justify-between" key={item.id}>
                     <div
                       className="w-[300px] h-[215] rounded-lg"
                       style={{

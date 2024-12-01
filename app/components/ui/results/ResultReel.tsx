@@ -5,7 +5,7 @@ export function ResultReel({results}: {results: ResultsData[]}) {
   return (
     <div className="flex items-center h-[650px] -ml-[150px] gap-[10px] overflow-hidden">
       {results.map((result) => (
-        <ResultCard clientInfo={result} />
+        <ResultCard clientInfo={result} key={result.id}/>
       ))}
     </div>
   );
