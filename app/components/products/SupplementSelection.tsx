@@ -1,14 +1,13 @@
 // import type {ProductNode} from '~/routes/_index';
 import {AlternativeCard} from '../ui/products/AlternativeProductCard';
 import {SupplementCard} from '../ui/products/ProductCard';
-import type { ExtendedProductFragment } from '../ui/products/ExtendedProduct.type';
+import type {ExtendedProductFragment} from '../ui/products/ExtendedProduct.type';
 
 export function SupplementSelection({
-  productList
+  productList,
 }: {
   productList: ExtendedProductFragment[];
 }) {
-
   return (
     <div className="flex bg-[#F6F6F5] w-full md:justify-center">
       <div className="flex flex-col mx-10 my-20 md:w-[1520px] items-center gap-[50px]">

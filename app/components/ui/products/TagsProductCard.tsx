@@ -1,9 +1,9 @@
 import {AddToCartButton} from '~/components/cart/AddToCartButton';
 import {ProductImage} from './ProductImage';
-import { useAside } from '~/components/aside/hooks/useAside';
-import { ExtendedProductFragment } from './ExtendedProduct.type';
+import {useAside} from '~/components/aside/hooks/useAside';
+import type {ExtendedProductFragment} from './ExtendedProduct.type';
 
-export function TagsProductCard({product}: {product: ExtendedProductFragment }) {
+export function TagsProductCard({product}: {product: ExtendedProductFragment}) {
   const {open} = useAside();
   // const metafieldsArray = JSON.parse(product.metafields[0].value)
   const metafieldsArray = [null];
@@ -20,8 +20,7 @@ export function TagsProductCard({product}: {product: ExtendedProductFragment }) 
       </div>
       <div className="flex flex-col gap-4 mx-5 mb-5 mt-auto w-[325px] h-[110px]">
         <div className="grid grid-cols-[1fr_1fr_1fr_1fr] gap-2 w-full">
-          {(metafieldsArray &&
-          metafieldsArray.some((field) => field !== null)
+          {(metafieldsArray && metafieldsArray.some((field) => field !== null)
             ? metafieldsArray
             : FALLBACK_METAFIELDS
           ).map((field) => {
@@ -67,7 +66,9 @@ export function TagsProductCard({product}: {product: ExtendedProductFragment }) 
                     : []
                 }
               >
-                {product.variants.nodes[0].availableForSale ? `Add to Cart` : 'Sold out'}
+                {product.variants.nodes[0].availableForSale
+                  ? `Add to Cart`
+                  : 'Sold out'}
               </AddToCartButton>
             </div>
           </div>

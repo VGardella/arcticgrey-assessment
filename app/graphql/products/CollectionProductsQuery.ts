@@ -68,7 +68,7 @@ const COLLECTION_FRAGMENT = `#graphql
     }
   }
   ${COLLECTION_PRODUCTS_FRAGMENT}
-`
+`;
 
 export const COLLECTION_QUERY = `#graphql
   ${COLLECTION_FRAGMENT}
@@ -77,4 +77,4 @@ export const COLLECTION_QUERY = `#graphql
       ...Collection
     }
   }
-`
+`;

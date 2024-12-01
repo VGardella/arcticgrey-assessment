@@ -1,7 +1,7 @@
 import {ProductImage} from './ProductImage';
 import {AddToCartButton} from '../../cart/AddToCartButton';
-import { ProductFragment } from 'storefrontapi.generated';
-import { useAside } from '~/components/aside/hooks/useAside';
+import type {ProductFragment} from 'storefrontapi.generated';
+import {useAside} from '~/components/aside/hooks/useAside';
 
 export function AlternativeCard({product}: {product: ProductFragment}) {
   const {open} = useAside();

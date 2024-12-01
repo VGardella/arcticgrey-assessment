@@ -94,10 +94,7 @@ export function Footer() {
               Connect With Us
             </h3>
             <div className="flex gap-[20px]">
-              <img
-                className="h-[20px]"
-                src="/../assets/icons/insta-icon.png"
-              />
+              <img className="h-[20px]" src="/../assets/icons/insta-icon.png" />
               <img
                 className="h-[15px]"
                 src="/../assets/icons/twitter-icon.png"

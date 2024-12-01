@@ -1,10 +1,9 @@
 import {ProductImage} from './ProductImage';
 import {AddToCartButton} from '../../cart/AddToCartButton';
-import { useAside } from '~/components/aside/hooks/useAside';
-import type { ExtendedProductFragment } from './ExtendedProduct.type';
+import {useAside} from '~/components/aside/hooks/useAside';
+import type {ExtendedProductFragment} from './ExtendedProduct.type';
 
-
-export function SupplementCard({product}: {product: ExtendedProductFragment }) {
+export function SupplementCard({product}: {product: ExtendedProductFragment}) {
   const {open} = useAside();
   // const metafieldsArray = JSON.parse(product.metafields[0].value)
   const metafieldsArray = [null];
@@ -18,8 +17,7 @@ export function SupplementCard({product}: {product: ExtendedProductFragment }) {
       </div>
       <div className="flex flex-col gap-4 mx-5 mb-5 mt-auto w-[325px] h-[110px]">
         <div className="grid grid-cols-[1fr_1fr_1fr_1fr] gap-2 w-full">
-          {(metafieldsArray &&
-          metafieldsArray.some((field) => field !== null)
+          {(metafieldsArray && metafieldsArray.some((field) => field !== null)
             ? metafieldsArray
             : FALLBACK_METAFIELDS
           ).map((field) => {

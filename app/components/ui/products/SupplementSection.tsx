@@ -1,16 +1,15 @@
 import {SupplementSelection} from '../../products/SupplementSelection';
 import {SupplementInfo} from './SupplementInfo';
 import type {SupplData} from 'public/assets/supplements/clean-supplements';
-import { ExtendedProductFragment } from './ExtendedProduct.type';
+import type {ExtendedProductFragment} from './ExtendedProduct.type';
 
 export function SupplementSection({
   suppInfo,
-  productList
+  productList,
 }: {
   suppInfo: SupplData[];
   productList: ExtendedProductFragment[];
 }) {
-
   return (
     <div className="flex flex-col md:items-center">
       <SupplementSelection productList={productList} />

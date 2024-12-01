@@ -1,15 +1,14 @@
 import {NavBar} from '../NavBar';
 import {TagsProductCard} from '../ui/products/TagsProductCard';
-import { CollectionQuery } from 'storefrontapi.generated';
-import { Suspense } from 'react';
-import { Await } from '@remix-run/react';
+import type {CollectionQuery} from 'storefrontapi.generated';
+import {Suspense} from 'react';
+import {Await} from '@remix-run/react';
 
 export function BundlesSelection({
-  productList
+  productList,
 }: {
   productList: Promise<CollectionQuery>;
 }) {
-
   return (
     <div className="flex justify-center w-full">
       <div className="flex flex-col mx-10 my-20 gap-[50px] md:w-[1520px]">
@@ -36,12 +35,10 @@ export function BundlesSelection({
         <div className="flex gap-5">
           <Suspense fallback={<div>Loading...</div>}>
             <Await resolve={productList}>
-              {
-                (resolvedList) => (
-                  resolvedList.collection?.products.nodes.map((item) => {
-                    return <TagsProductCard key={item.id} product={item} />;
-                  })
-                )          
+              {(resolvedList) =>
+                resolvedList.collection?.products.nodes.map((item) => {
+                  return <TagsProductCard key={item.id} product={item} />;
+                })
               }
             </Await>
           </Suspense>
