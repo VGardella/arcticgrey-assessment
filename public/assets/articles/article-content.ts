@@ -26,7 +26,7 @@ const articleContent: ArticleType[] = [
     date: 'August 31, 2023',
   },
   {
-    id: 'secondary-1',
+    id: 'secondary-2',
     imgUrl: '/../assets/articles/secondary2.jpg',
     topic: 'Balanced Diet',
     title: 'Optimize Your Sleep with These 15 Strategies',
