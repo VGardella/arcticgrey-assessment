@@ -1,6 +1,5 @@
 import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData, type MetaFunction} from '@remix-run/react';
-import {flattenConnection} from '@shopify/hydrogen';
 import {HeroSection} from '~/components/ui/hero/HeroSection';
 import carouselText from 'public/assets/hero/carousel-text';
 import {GoalSection} from '~/components/ui/goals/Goals';
@@ -14,148 +13,63 @@ import {
   instaImagesSuperior,
 } from 'public/assets/insta/insta-content';
 import articleContent from 'public/assets/articles/article-content';
-import type {ProductVariantFragment} from 'storefrontapi.generated';
-import type {MoneyV2} from '@shopify/hydrogen/customer-account-api-types';
-import {AutomaticCarousel} from '~/components/ui/carousel/AutomaticCarousel';
 import {BundlesSection} from '~/components/ui/products/BundlesSection';
 import {SupplementSection} from '~/components/ui/products/SupplementSection';
 import {ResultsSection} from '~/components/ui/results/ResultsSection';
 import resultList from 'public/assets/results/results-content';
+import { COLLECTION_QUERY } from '~/graphql/products/CollectionProductsQuery';
 
 export const meta: MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
 };
 
-type ProductMetafield = {
-  id: string | null;
-  namespace: string | null;
-  key: string | null;
-  value: string | null;
-};
+export async function loader(args: LoaderFunctionArgs) {
+  const deferredData = loadDeferredData(args);
+  
+  const criticalData = await loadCriticalData(args);
+  return defer({...deferredData, ...criticalData});
+}
 
-type CollectionsData = {
-  id: string;
-  handle: string;
-};
+async function loadCriticalData({context}: LoaderFunctionArgs) {
+  const principalCollection = await Promise.all([
+    context.storefront.query(COLLECTION_QUERY, {
+      variables: { handle: "supplements" }
+    })
+  ]);
 
-export type EdgeNode<T> = {
-  edges: {
-    node: T;
-  }[];
-};
-
-export type ProductNode = {
-  id: string;
-  images: EdgeNode<ProductVariantFragment['image']>;
-  description: string;
-  productType: string;
-  tags: string[];
-  title: string;
-  category: {
-    id: string;
-    name: string;
+  return {
+    principalCollection: principalCollection[0]
   };
-  priceRange: {
-    maxVariantPrice: MoneyV2;
-  };
-  availableForSale: boolean;
-  metafields: ProductMetafield[];
-  collections: EdgeNode<CollectionsData>;
-};
+}
 
-type ProductListPromise = {
-  products: EdgeNode<ProductNode>;
-};
-
-async function loadCtiricalData({
-  context,
-}: LoaderFunctionArgs): Promise<ProductListPromise> {
-  const productList = context.storefront
-    .query(PRODUCTS_QUERY)
+function loadDeferredData({context}: LoaderFunctionArgs)  {
+  const secondaryCollection = context.storefront
+    .query(COLLECTION_QUERY, {
+      variables: { handle: "bundles" }
+    })
     .catch((error) => {
       console.error(error);
       return null;
     });
-
-  return productList;
+  return {
+    secondaryCollection: secondaryCollection
+  };
 }
 
-export async function loader(args: LoaderFunctionArgs) {
-  const deferredData = await loadCtiricalData(args);
-
-  return defer({...deferredData});
-}
-
-const PRODUCTS_QUERY = `#graphql
-  query {
-    products(first: 20) {
-      edges {
-        node {
-          id
-          images(first: 1) {
-            edges {
-              node {
-                id
-                url
-                altText
-                width
-                height
-              }
-            }
-          }
-          description
-          productType
-          tags
-          title
-          category {
-            id
-            name
-          }
-          priceRange {
-            maxVariantPrice {
-              amount
-              currencyCode
-            }
-          }
-          availableForSale
-          metafields(
-          identifiers: [
-            { namespace: "shopify--dietary-preferences", key: "label" }
-          ]
-          ) {
-            id
-            key
-            value
-            namespace
-          }
-          collections (first: 5) {
-              edges {
-                  node {
-                      id
-                      handle
-                      }
-                  }
-              }
-          }
-        }
-      }
-    }
-`;
 
 export default function Homepage() {
   const data = useLoaderData<typeof loader>();
-  const products = flattenConnection(data.products) as ProductNode[];
+  
   return (
     <div className="home">
       <HeroSection animationContent={carouselText} />
       <GoalSection goalsInfo={goalsInfo} />
       <SupplementSection
         suppInfo={supplementMarketing}
-        productList={products}
-        handle="supplements"
+        productList={data.principalCollection.collection.products.nodes}
       />
       <ResultsSection results={resultList} />
-      <BundlesSection productList={products} handle="bundles" />
+      <BundlesSection productList={data.secondaryCollection} />
       <CustomizedProduct />
       <NextGenSection />
       <AlternativeContent
