@@ -1,16 +1,13 @@
-import type {ProductNode} from '~/routes/_index';
-import {filterCollection} from '~/domain/filterCollection';
+// import type {ProductNode} from '~/routes/_index';
 import {AlternativeCard} from '../ui/products/AlternativeProductCard';
 import {SupplementCard} from '../ui/products/ProductCard';
+import type { ExtendedProductFragment } from '../ui/products/ExtendedProduct.type';
 
 export function SupplementSelection({
-  productList,
-  handle,
+  productList
 }: {
-  productList: ProductNode[];
-  handle: string;
+  productList: ExtendedProductFragment[];
 }) {
-  const products = filterCollection({productList, handle});
 
   return (
     <div className="flex bg-[#F6F6F5] w-full md:justify-center">
@@ -35,9 +32,9 @@ export function SupplementSelection({
           <p>View All</p>
         </div>
         <div className="flex gap-5">
-          <AlternativeCard product={products[0]} />
-          {products.slice(1, 4).map((product) => (
-            <SupplementCard product={product} />
+          <AlternativeCard product={productList[0]} />
+          {productList.slice(1, 4).map((product) => (
+            <SupplementCard key={product.id} product={product} />
           ))}
         </div>
       </div>
